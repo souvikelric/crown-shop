@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectCategoryItems } from "../../redux/shop/shopSelectors";
+import { selectCollection } from "../../redux/shop/shopSelectors";
 import CollectionItem from "../../components/collection-item/collection-item";
 
 import "./categoryPage.scss";
@@ -20,7 +20,7 @@ const CategoryPage = ({ collection }) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  collection: selectCategoryItems(ownProps.match.params.categoryId)(state),
+  collection: selectCollection(ownProps.match.params.categoryId)(state),
 });
 
 export default connect(mapStateToProps)(CategoryPage);
